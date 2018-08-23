@@ -31,7 +31,8 @@ exports.create = async function(user){
     
     var newUser = new User({
         username:user.username,
-        password:user.password
+        password:user.password,
+        role:user.role
     })
 
 

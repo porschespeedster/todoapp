@@ -42,7 +42,8 @@ exports.createUser = async function(req, res, next){
 
     var user = {
         username: req.body.username,
-        password: req.body.password        
+        password: req.body.password,
+        role: req.body.role        
     }
 
     try{
