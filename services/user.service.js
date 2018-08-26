@@ -10,14 +10,15 @@ exports.login = async function(user){
 
     // Options setup for the mongoose paginate
     var options = {
-        username:user.username,
+        username:user.data1,
         password:user.password
     }
     
     // Try Catch the awaited promise to handle the error 
     
     try {
-        var userss = await User.find(options.username)                
+        // var userss = await User.find(options.username)      
+        var userss = await User.find({"username":options.username})      
         // Return the todod list that was retured by the mongoose promise
         return userss;
 
