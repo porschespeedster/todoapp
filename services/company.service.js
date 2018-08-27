@@ -7,8 +7,8 @@ _this = this
 
 exports.createCompany = async function(company){
     
-    var newCompany = new User({
-        companyname:company.name,
+    var newCompany = new Company({
+        name:company.name,
         address:company.address
         
     })
@@ -19,10 +19,29 @@ exports.createCompany = async function(company){
         var savedCompany = await newCompany.save();
         return savedCompany;
     }catch(e){
-        throw Error("Error occured while creating user")
+        throw Error("Error occured while creating a company")
     }
     // If no old Todo Object exists return false
     
+}
+
+exports.getCompanies = async function(query){
+
+   
+    
+    // Try Catch the awaited promise to handle the error 
+    
+    try {
+        var companies = await Company.paginate(query)
+        
+        // Return the todod list that was retured by the mongoose promise
+        return companies;
+
+    } catch (e) {
+
+        // return a Error message describing the reason 
+        throw Error('Error while Paginating Todos')
+    }
 }
 
 
