@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var api = require('./routes/api.route')
 var user = require('./routes/user.route')
 var company = require('./routes/company.route')
+var domain = require('./routes/domain.route')
+var application = require('./routes/application.route')
 
 var app = express();
 
@@ -42,6 +44,8 @@ app.use('/users', usersRouter);
 app.use('/api', api);
 app.use('/user', user);
 app.use('/company', company);
+app.use('/domain', domain);
+app.use('/app', application);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

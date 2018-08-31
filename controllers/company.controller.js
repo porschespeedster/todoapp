@@ -19,7 +19,7 @@ exports.createCompany = async function(req, res, next){
                  + (req.body.city      ? req.body.city       +',' : '') 
                  + (req.body.pincode   ? req.body.pincode    +',' : '') 
                  + (req.body.state     ? req.body.state      +',' : '') 
-                 + (req.body.country   ? req.body.country    +',' : '')         
+                 + (req.body.country   ? req.body.country    +'' : '')         
     }
 
     try{
